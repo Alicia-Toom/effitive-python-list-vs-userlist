@@ -4,6 +4,8 @@ The purpose of this repository is do a comparison assignment for the course effe
 
 ## Instructions
 
+´´´
+
 Create your own Lists: At many moments in yourmPython coding trip, you may need to create your own list of a data type with modified behavior, new functionalities, or both.In this project we are going to user python built-in data type list and other from collection library to create our own data types. Please answer all these questions, 25 points per each! 
 
 1. Create a class ListOfString() where you need a list to be automatically stores all its items as stringsand inherit from List class. Your class converts all the input values into strings on the fly, so to achievethis you need to modifythese methods and demonstratehow we can use each of them. 
@@ -35,6 +37,8 @@ d..for_each_item(func) calls func() on every item in the underlying list to gene
 a.let’s create the same methods (a.,b.,c.,d.and e.)from question#1
 b.Let’s use timeit using test_data= range(100_000)with extend()method.
 c.Compare the results? and explain why?
+
+´´´
 
 # Projects layout
 
