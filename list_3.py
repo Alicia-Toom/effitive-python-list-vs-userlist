@@ -27,37 +27,33 @@ class AliciaList(List):
         """
         return " ".join([str(value) for value in self])
 
-    def map_t(self, action: List) -> None:
+    def map_t(self, action) -> List:
         """
         Parameters:
-            action (List): A list of integers
+            action: Function that will be called for each item in list
 
         Returns:
-            None
+            List: A new list with mapped values produced by the action parameter
         """
         return [action(str(value)) for value in self]
 
-    def filter_it(self, predicate: List) -> None:
+    def filter_it(self, predicate) -> List:
         """
         Parameters:
             predicate (List): A list of integers
 
         Returns:
-            None
+            List: A new list with filtered values produced by the predicate parameter
         """
         return [value for value in self if predicate(str(value))]
 
-    def for_each_item(self, func: List) -> None:
+    def for_each_item(self, func):
         """
         Parameters:
-            func (List): A list of integers
-
-        Yield:
-            None
+            func: A function to be called for each item in the list
         """
         for value in self:
             yield func(str(value))
-
 
 if __name__ == "__main__":
     # A .join_it() concatenates all the list’s items in a single string.

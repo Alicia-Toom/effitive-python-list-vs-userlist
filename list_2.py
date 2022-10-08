@@ -17,16 +17,16 @@ class ListOfNum(List):
         None
     """
 
-    def __init__(self, other: List) -> bool:
+    def __init__(self, other: List) -> None:
         """
         Parameters:
             other (List): A list of integers, float, and complex
 
         Returns:
-            bool: True if successful
+            None
 
         Raise:
-            TypeError: In case of false otherwise
+            TypeError: In case of parameters contains incompatible types
         """
 
         for value in other:
@@ -37,17 +37,17 @@ class ListOfNum(List):
 
         super().__init__(other)
 
-    def __setitem__(self, key: int, value: List) -> bool:
+    def __setitem__(self, key: int, value: List) -> None:
         """
         Parameters:
-            key (int): Index to assigning a value in the list
-            value (List): A value to assigning a value to list
+            key (int): Index for new item in the list
+            value (List): Value for new item in the list
 
         Returns:
-            bool: True if successful
+            None
 
         Raise:
-            TypeError: In case of false otherwise
+            TypeError: In case of parameters contains incompatible types
         """
 
         if self.is_numeric(value):
@@ -55,13 +55,13 @@ class ListOfNum(List):
         else:
             raise TypeError("numeric value expected")
 
-    def is_numeric(self, value: int) -> bool:
+    def is_numeric(self, value) -> bool:
         """
         Parameters:
             value (List): A list of integers, float, and complex
 
         Returns:
-            bool: True if successful and false otherwise
+            bool: True if value is int, float or complex and false otherwise
         """
 
         if isinstance(value, int):
@@ -75,16 +75,16 @@ class ListOfNum(List):
 
         return False
 
-    def extend(self, other: int) -> bool:
+    def extend(self, other: int) -> None:
         """
         Parameters:
             other (List): A list of integers, float, and complex to extend to list
 
         Returns:
-            bool: True if successful
+            None
 
         Raise:
-            TypeError: In case of false otherwise
+            TypeError: In case of parameters contains incompatible types
         """
 
         for value in other:
@@ -95,17 +95,17 @@ class ListOfNum(List):
 
         super().extend(other)
 
-    def insert(self, index: int, value: List) -> bool:
+    def insert(self, index: int, value: List) -> None:
         """
         Parameters:
-            index (int): Index to insert a value in the list
-            value (List): A value to insert a value to list
+            index (int): Index to insert in list
+            value (List): Value to insert in list
 
         Returns:
-            bool: True if successful
+            None
 
         Raise:
-            TypeError: In case of false otherwise
+            TypeError: In case of parameters contains incompatible types
         """
 
         if self.is_numeric(value):
@@ -113,16 +113,16 @@ class ListOfNum(List):
         else:
             raise TypeError("numeric value expected")
 
-    def append(self, value: List) -> bool:
+    def append(self, value: List) -> None:
         """
         Parameters:
             value (List): A value to append a value to list
 
         Returns:
-            bool: True if successful
+            None
 
         Raise:
-            TypeError: In case of false otherwise
+            TypeError: In case of parameters contains incompatible types
         """
 
         if self.is_numeric(value):

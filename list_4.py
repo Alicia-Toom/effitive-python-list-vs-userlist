@@ -6,21 +6,23 @@
 
 import timeit
 from collections import UserList
+from typing import List
+
 from list_1 import ListOfString
 
 
 class ListOfUserString(UserList):
-    """A class that represent example of inheriting from List class
+    """A class that represent example of inheriting from UserList class
 
     Attributes
     ----------
         None
     """
 
-    def __init__(self, other: UserList) -> None:
+    def __init__(self, other: List) -> None:
         """
         Parameters:
-            other (UserList): A list of integers
+            other (List): A list of integers
 
         Returns:
             None
@@ -28,10 +30,10 @@ class ListOfUserString(UserList):
 
         super().__init__([str(i) for i in other])
 
-    def append(self, item: UserList) -> None:
+    def append(self, item: List) -> None:
         """
         Parameters:
-            item (UserList): A list of integers
+            item (List): A list of integers
 
         Returns:
             None
@@ -39,11 +41,11 @@ class ListOfUserString(UserList):
 
         self.data.append(str(item))
 
-    def __setitem__(self, index: int, item: str) -> None:
+    def __setitem__(self, index: int, item: int) -> None:
         """
         Parameters:
-            index (int): Index to assigning a value value in the list
-            item (str): A value to assigning a value to list
+            index (int): Index for new value in the list
+            item (int): A new value in the list
 
         Returns:
             None
@@ -51,10 +53,10 @@ class ListOfUserString(UserList):
 
         self.data[index] = str(item)
 
-    def extend(self, other: UserList) -> None:
+    def extend(self, other: List) -> None:
         """
         Parameters:
-            other (Userlist): A list of integers
+            other (List): A list of integers
 
         Returns:
             None
@@ -62,11 +64,11 @@ class ListOfUserString(UserList):
 
         self.data.extend([str(i) for i in other])
 
-    def insert(self, i: int, item: str) -> None:
+    def insert(self, i: int, item: int) -> None:
         """
         Parameters:
-            index (int): Index to insert value in the list
-            value (str): A value to insert to list
+            index (int): Index for new value in the list
+            value (int): A new value in the list
 
         Returns:
             None
@@ -74,26 +76,26 @@ class ListOfUserString(UserList):
 
         self.data.insert(i, str(item))
 
-    def __add__(self, other: UserList) -> UserList:
+    def __add__(self, other: List) -> List:
         """
         Parameters:
             other (List): A list of integers
 
         Returns:
-            UserList
+            List
         """
 
         self_copy = ListOfUserString(self)
         self_copy.extend(other)
         return self_copy
 
-    def __iadd__(self, other: UserList) -> UserList:
+    def __iadd__(self, other: List) -> List:
         """
         Parameters:
-            other (UserList): A list of integers
+            other (List): A list of integers
 
         Returns:
-            UserList
+            List
         """
 
         self.extend(other)
@@ -129,7 +131,6 @@ if __name__ == "__main__":
     a += b
     print(a)
 
-if __name__ == "__main__":
     # 4(B) Let’s use timeit using test_data = range(100_000) with extend() method.
     test_data = range(100_000)
 

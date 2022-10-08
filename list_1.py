@@ -41,8 +41,8 @@ class ListOfString(List):
     def __setitem__(self, key: int, value: str) -> None:
         """
         Parameters:
-            key (int): Index to assigning a value value in the list
-            value (str): A value to assigning a value to list
+            key (int): Index for new item in the list
+            value (str): Value for new item in the list
 
         Returns:
             None
@@ -53,7 +53,7 @@ class ListOfString(List):
     def extend(self, other: List) -> None:
         """
         Parameters:
-            other (List)): A list of integers
+            other (List): A list of integers
 
         Returns:
             None
@@ -61,11 +61,11 @@ class ListOfString(List):
 
         super().extend([str(i) for i in other])
 
-    def insert(self, index: int, value: str):
+    def insert(self, index: int, value: str) -> None:
         """
         Parameters:
-            index (int): Index to insert value in the list
-            value (str): A value to insert to list
+            index (int): Index for new item in the list
+            value (str): Value for new item in the list
 
         Returns:
             None
@@ -73,10 +73,10 @@ class ListOfString(List):
 
         super().insert(index, str(value))
 
-    def __add__(self, other: List):
+    def __add__(self, other: List) -> List:
         """
         Parameters:
-            other (List):  A list of integers to extend to List
+            other (List): A list of integers to add to the list
 
         Returns:
             List:
@@ -89,7 +89,7 @@ class ListOfString(List):
     def __iadd__(self, other: List) -> List:
         """
         Parameters:
-            other (List):  A list of integers to extend to List
+            other (List): A list of integers to append to the list
 
         Returns:
             List:
