@@ -25,7 +25,10 @@ e.append () adds a single new item at the end of the underlying list.
 
 3. Now let’s upgrade built in List datatype with new datatype called <your_name>List() example:  AmmarList(). This datatype inherits from List datatype and add extra methods.Writeyour own classand demonstrate the new addedmethodswith best performanceto built-in datatype as next methods:
 
-a..join_it() concatenates all the list’s items in a single string.b..map_it(action) yields new items that result from applying an action() callable to each item in the underlying list.c..filter_it(predicate) yields all the items that return True when calling predicate() on them.d..for_each_item(func) calls func() on every item in the underlying list to generate results!
+a..join_it() concatenates all the list’s items in a single string.
+b..map_it(action) yields new items that result from applying an action() callable to each item in the underlying list.
+c..filter_it(predicate) yields all the items that return True when calling predicate() on them.
+d..for_each_item(func) calls func() on every item in the underlying list to generate results!
 
 4. In first question we inherited from List class let’s here inherit fromUserList aclass in collection library,andnameis ListOfUserString()
 
@@ -35,7 +38,11 @@ c.Compare the results? and explain why?
 
 # Projects layout
 
+To answer each question, the file name is list_numbers.py respectively. 
+
 ## Compare the results? and explain why?
+
+Using time it to compare the run time for List VS UserList are as followed: 
 
 ```
 Timer for UserList: 0.039800100000000005
