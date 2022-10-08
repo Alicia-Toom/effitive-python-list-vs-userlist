@@ -1,11 +1,34 @@
-"""TODO"""
+"""Creating ListOfNum()a list that accepts integer, float, and complex numbers
+
+2.Create Class ListOfNum()  where you need a list that accepts
+numeric data only. Your ListOfNum instance should store onlyinteger,
+float, and complex. Otherwise raise an error. So,to achieve this you need
+inheritfrom List again and to modifythese methods and demonstratehow we can
+use each of themand testwith non-numbers ofvalues
+"""
 
 from typing import List
 
 class ListOfNum(List):
-    """TODO"""
+    """A class that store only integer, float, and complex numbers inheriting from List class
 
-    def __init__(self, other):
+    Attributes
+    ----------
+        None
+    """
+
+    def __init__(self, other: List) -> bool:
+        """
+        Parameters:
+            other (List): A list of integers, float, and complex
+
+        Returns:
+            bool: True if successful
+
+        Raise:
+            TypeError: In case of false otherwise
+        """
+
         for value in other:
             if self.is_numeric(value):
                 continue
@@ -14,14 +37,33 @@ class ListOfNum(List):
 
         super().__init__(other)
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: int, value: List) -> bool:
+        """
+        Parameters:
+            key (int): Index to assigning a value in the list
+            value (List): A value to assigning a value to list
+
+        Returns:
+            bool: True if successful
+
+        Raise:
+            TypeError: In case of false otherwise
+        """
+
         if self.is_numeric(value):
             super().__setitem__(key, value)
         else:
             raise TypeError("numeric value expected")
 
-    def is_numeric(self, value):
-        """TODO"""
+    def is_numeric(self, value: int) -> bool:
+        """
+        Parameters:
+            value (List): A list of integers, float, and complex
+
+        Returns:
+            bool: True if successful and false otherwise
+        """
+
         if isinstance(value, int):
             return True
 
@@ -33,7 +75,18 @@ class ListOfNum(List):
 
         return False
 
-    def extend(self, other):
+    def extend(self, other: int) -> bool:
+        """
+        Parameters:
+            other (List): A list of integers, float, and complex to extend to list
+
+        Returns:
+            bool: True if successful
+
+        Raise:
+            TypeError: In case of false otherwise
+        """
+
         for value in other:
             if self.is_numeric(value):
                 continue
@@ -42,13 +95,36 @@ class ListOfNum(List):
 
         super().extend(other)
 
-    def insert(self, index, value):
+    def insert(self, index: int, value: List) -> bool:
+        """
+        Parameters:
+            index (int): Index to insert a value in the list
+            value (List): A value to insert a value to list
+
+        Returns:
+            bool: True if successful
+
+        Raise:
+            TypeError: In case of false otherwise
+        """
+
         if self.is_numeric(value):
             super().insert(index, value)
         else:
             raise TypeError("numeric value expected")
 
-    def append(self, value):
+    def append(self, value: List) -> bool:
+        """
+        Parameters:
+            value (List): A value to append a value to list
+
+        Returns:
+            bool: True if successful
+
+        Raise:
+            TypeError: In case of false otherwise
+        """
+
         if self.is_numeric(value):
             super().append(value)
         else:

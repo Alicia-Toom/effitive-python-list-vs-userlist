@@ -1,24 +1,60 @@
-"""TODO"""
+""" A class of your own name: AiciaList() using built-in datatype
+
+3.Now let’s upgrade built in List datatype with new datatype
+called <your_name>List() example:  AmmarList(). This datatype
+inherits from List datatype and add extra methods. Writeyour own
+classand demonstrate the new addedmethodswith best performanceto
+built-in datatype as next methods
+"""
 
 from typing import List
 
 class AliciaList(List):
-    """TODO"""
+    """A class inheriting from List class using built-in datatype
+
+    Attributes
+    ----------
+        None
+    """
 
     def join_it(self):
-        """TODO"""
+        """
+        Parameters:
+            None
+
+        Returns:
+            None
+        """
         return " ".join([str(value) for value in self])
 
-    def map_t(self, action):
-        """TODO"""
+    def map_t(self, action: List) -> None:
+        """
+        Parameters:
+            action (List): A list of integers
+
+        Returns:
+            None
+        """
         return [action(str(value)) for value in self]
 
-    def filter_it(self, predicate):
-        """TODO"""
+    def filter_it(self, predicate: List) -> None:
+        """
+        Parameters:
+            predicate (List): A list of integers
+
+        Returns:
+            None
+        """
         return [value for value in self if predicate(str(value))]
 
-    def for_each_item(self, func):
-        """TODO"""
+    def for_each_item(self, func: List) -> None:
+        """
+        Parameters:
+            func (List): A list of integers
+
+        Yield:
+            None
+        """
         for value in self:
             yield func(str(value))
 

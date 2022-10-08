@@ -1,4 +1,6 @@
-"""1.Create a class ListOfString() where you need a list to be automatically
+"""Create class ListOfString() inheriting From python’s built-in List class
+
+    1.Create a class ListOfString() where you need a list to be automatically
     stores all its items as stringsand inherit from List class. Your class converts
     all the input values into strings on the fly, so to achievethis you need to
     modifythese methods and demonstratehow we can use each of themas example here:
@@ -7,29 +9,92 @@
 from typing import List
 
 class ListOfString(List):
-    """TODO"""
+    """A class that represent example of inheriting from List class
 
-    def __init__(self, other):
+    Attributes
+    ----------
+        None
+    """
+
+    def __init__(self, other: List) -> None:
+        """
+        Parameters:
+            other (List): A list of integers
+
+        Returns:
+            None
+        """
+
         super().__init__([str(i) for i in other])
 
-    def append(self, value):
+    def append(self, value: str) -> None:
+        """
+        Parameters:
+            value (str): A value to append to list
+
+        Returns:
+            None
+        """
+
         super().append(str(value))
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: int, value: str) -> None:
+        """
+        Parameters:
+            key (int): Index to assigning a value value in the list
+            value (str): A value to assigning a value to list
+
+        Returns:
+            None
+        """
+
         super().__setitem__(key, str(value))
 
-    def extend(self, other):
+    def extend(self, other: List) -> None:
+        """
+        Parameters:
+            other (List)): A list of integers
+
+        Returns:
+            None
+        """
+
         super().extend([str(i) for i in other])
 
-    def insert(self, index, value):
+    def insert(self, index: int, value: str):
+        """
+        Parameters:
+            index (int): Index to insert value in the list
+            value (str): A value to insert to list
+
+        Returns:
+            None
+        """
+
         super().insert(index, str(value))
 
-    def __add__(self, other):
+    def __add__(self, other: List):
+        """
+        Parameters:
+            other (List):  A list of integers to extend to List
+
+        Returns:
+            List:
+        """
+
         self_copy = ListOfString(self)
         self_copy.extend(other)
         return self_copy
 
-    def __iadd__(self, other):
+    def __iadd__(self, other: List) -> List:
+        """
+        Parameters:
+            other (List):  A list of integers to extend to List
+
+        Returns:
+            List:
+        """
+
         self.extend(other)
         return self
 

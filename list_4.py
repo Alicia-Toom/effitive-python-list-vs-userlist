@@ -1,4 +1,6 @@
-"""4. In first question we inherited from List class let’s here inherit
+"""A ListOfUserString() class that inherit from Userlist
+
+    4. In first question we inherited from List class let’s here inherit
     from UserList a class in collection library, and name is ListOfUserString()
 """
 
@@ -8,28 +10,92 @@ from list_1 import ListOfString
 
 
 class ListOfUserString(UserList):
-    """TODO"""
-    def __init__(self, other):
+    """A class that represent example of inheriting from List class
+
+    Attributes
+    ----------
+        None
+    """
+
+    def __init__(self, other: UserList) -> None:
+        """
+        Parameters:
+            other (UserList): A list of integers
+
+        Returns:
+            None
+        """
+
         super().__init__([str(i) for i in other])
 
-    def append(self, item):
+    def append(self, item: UserList) -> None:
+        """
+        Parameters:
+            item (UserList): A list of integers
+
+        Returns:
+            None
+        """
+
         self.data.append(str(item))
 
-    def __setitem__(self, index, item):
+    def __setitem__(self, index: int, item: str) -> None:
+        """
+        Parameters:
+            index (int): Index to assigning a value value in the list
+            item (str): A value to assigning a value to list
+
+        Returns:
+            None
+        """
+
         self.data[index] = str(item)
 
-    def extend(self, other):
+    def extend(self, other: UserList) -> None:
+        """
+        Parameters:
+            other (Userlist): A list of integers
+
+        Returns:
+            None
+        """
+
         self.data.extend([str(i) for i in other])
 
-    def insert(self, i, item):
+    def insert(self, i: int, item: str) -> None:
+        """
+        Parameters:
+            index (int): Index to insert value in the list
+            value (str): A value to insert to list
+
+        Returns:
+            None
+        """
+
         self.data.insert(i, str(item))
 
-    def __add__(self, other):
+    def __add__(self, other: UserList) -> UserList:
+        """
+        Parameters:
+            other (List): A list of integers
+
+        Returns:
+            UserList
+        """
+
         self_copy = ListOfUserString(self)
         self_copy.extend(other)
         return self_copy
 
-    def __iadd__(self, other):
+    def __iadd__(self, other: UserList) -> UserList:
+        """
+        Parameters:
+            other (UserList): A list of integers
+
+        Returns:
+            UserList
+        """
+
         self.extend(other)
         return self
 
@@ -63,6 +129,7 @@ if __name__ == "__main__":
     a += b
     print(a)
 
+if __name__ == "__main__":
     # 4(B) Let’s use timeit using test_data = range(100_000) with extend() method.
     test_data = range(100_000)
 
@@ -74,16 +141,4 @@ if __name__ == "__main__":
     print(f"Timer for List: {timer.timeit(number=1)}")
 
     # 4(C) Compare the results? and explain why?
-    #Timer for UserList: 0.039800100000000005
-    #Timer for List: 0.02877669999999999
-    #
-    # UserList is a little bit slower and the reason could be
-    # that UserList is with the Python standard library while List is wriiten in C
-    # and potimized for performance.
-    #
-    # One takeaway from this when deciding which superclass is best for your specific use case,
-    # make sure to run a performance test.
-    #
-    #
-    # For more information to read further and
-    # for references: https://realpython.com/inherit-python-list/
+    #Checkout README.md
